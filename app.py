@@ -15,7 +15,7 @@ year = st.number_input("Enter Year", min_value=1000, max_value=9999, value=2020)
 # Button
 if st.button("Predict"):
     try:
-        response = requests.post(API_URL, params={"x": int(year)})
+        response = requests.post(API_URL, json={"x": int(year)})
 
         if response.status_code == 200:
             data = response.json()
