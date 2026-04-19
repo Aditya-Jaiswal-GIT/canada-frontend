@@ -11,11 +11,14 @@ st.markdown("Enter a year (1000 - 9999) to predict per capita income.")
 
 # Input
 year = st.number_input("Enter Year", min_value=1000, max_value=9999, value=2020)
+data = {
+    'year' : int(year)
+}
 
 # Button
 if st.button("Predict"):
     try:
-        response = requests.post(API_URL, json={"x": int(year)})
+        response = requests.post(API_URL, json=data)
 
         if response.status_code == 200:
             data = response.json()
