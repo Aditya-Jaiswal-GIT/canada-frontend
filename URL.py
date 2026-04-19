@@ -1,0 +1,1 @@
+url = "https://canada-backend-wsce.onrender.com/predict"
